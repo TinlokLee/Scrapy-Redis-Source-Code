@@ -3,6 +3,10 @@ import six
 from scrapy.utils.misc import load_object
 from . import connection, defaults
 
+"""
+    调度器实现原理：
+        核心通过enqueue_request 和next_request 函数实现requst 从队列中的添加和提取
+"""
 
 # TODO: add SCRAPY_JOB support.
 class Scheduler(object):
