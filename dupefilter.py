@@ -7,7 +7,11 @@ from .connection import get_redis_from_settings
 
 
 logger = logging.getLogger(__name__)
+"""
+    去重过滤
+        实现思路： 通过redis 集合，对比判断request是否在其中，完成指纹记录和重复验证
 
+"""
 
 # TODO: Rename class to RedisDupeFilter.
 class RFPDupeFilter(BaseDupeFilter):
