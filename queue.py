@@ -1,6 +1,13 @@
 from scrapy.utils.reqser import request_to_dict, request_from_dict
 from . import picklecompat
 
+"""
+    分布式队列实现：
+        1 自定义父类，并提供一些基本的方法和属性
+        2 重写三个子类（即先进先出FIFO，先进后出LIFO，优先级级调度队列）实现父类的三个方法
+          __len__(), __push__()__, __pop__()
+"""
+
 
 class Base(object):
     """Per-spider base queue class"""
